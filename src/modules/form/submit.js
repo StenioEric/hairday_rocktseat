@@ -27,7 +27,7 @@ form.onsubmit = (event) => {
         // Recupera o horário selecionado
         const hourSelected = document.querySelector(".hour-selected")
 
-        // Recupera o horário selecionado
+        // Verifica se o usuário selecionou um horário
         if (!hourSelected) {
             return alert("Selecione a hora")
         }
@@ -35,8 +35,10 @@ form.onsubmit = (event) => {
         // Recupera somente a hora
         const [hour] = hourSelected.innerText.split(":")
         
-        // Insere a hora na data
-        const when = dayjs(selectedDate.value).add(hour, "hour")
+        // Recupera a data selecionada e adiciona a hora selecionada para criar um objeto dayjs com a data e hora do agendamento
+        // hour é a hora selecionada, e "hour" é a unidade de tempo
+        const when = dayjs(selectedDate.value).add(hour, "hour") 
+
 
         // Gera um ID
         const id = new Date().getTime()
