@@ -10,6 +10,8 @@ const hours = document.getElementById("hours")
 // Além disso, adiciona um evento de clique nos horários disponíveis para permitir a seleção do horário desejado.
 
 export function hoursLoad({ date }) {
+    // Limpa a lista de horários
+    hours.innerHTML = ""
     const opening = openingHours.map((hour) => { // Itera sobre cada horário definido no array openingHours
         // Recupera somente a hora
         const [scheduleHour] = hour.split(":") // Divide a string do horário em hora e minuto, pegando apenas a hora
